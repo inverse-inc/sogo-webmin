@@ -1,0 +1,4 @@
+desc=SOGo server
+os_support=*-linux
+category=servers
+version=1.520

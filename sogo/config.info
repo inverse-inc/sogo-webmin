@@ -1,0 +1,3 @@
+sogo_user=User SOGO server runs as,5
+gnustep_defaults_command=Full path to GNUstep defaults command,0
+init_command=Init script,8

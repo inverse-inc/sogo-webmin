@@ -1,0 +1,4 @@
+sogo_user=sogo
+gnustep_domain=sogod
+gnustep_defaults_command=/usr/bin/defaults
+init_command=/etc/init.d/sogo

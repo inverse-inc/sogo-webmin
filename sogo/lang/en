@@ -1,0 +1,106 @@
+index_title=SOGo Server
+index_return=SOGo configuration
+previous_return=previous page
+
+create=Create
+return=Return to main configuration page
+restart=Restart server
+stop=Stop server
+start=Start server
+test=Test
+success=Success
+failed=Failed
+
+note_apply= Restarting the server will apply any changes to the SOGo configuration
+note_restart= To activate the changes, you must also restart the server from the main page
+
+stop_err=Error while stopping SOGo
+restart_err=Error while restarting SOGo
+start_err=Error while starting SOGo
+save_err=Error while saving the following parameter
+delete_err=Error during deletion
+
+index_edefaults=The GNUstep command $1 does not exist. Maybe your <a href='$2'>module configuration</a> is incorrect.
+source_enone=No source specified
+source_efound=Source not found
+
+parameter_err=Missing parameter
+
+general_title=General Preferences
+WOWorkersCount=Workers count
+WOLogFile=Log file
+SOGoTimeZone=Time zone
+SOGoLanguage=Language
+SOGoMailDomain=Mail domain
+SOGoAppointmentSendEMailNotifications=Send email notifications when creating or modifying appointments
+SOGoFoldersSendEMailNotifications=Send email notifications to the owner when creating folders
+SOGoACLsSendEMailNotifications=Send email notifications when giving read and/or write access to users
+SOGoEnableEMailAlarms=Enable email alarms for events
+SOGoSuperUsernames=Super usernames (one per line)
+
+sources_title=Users Sources
+SOGoUserSources=Sources
+add_source=Add a new source
+SOGoUserSource_id=Identifier
+SOGoUserSource_displayName=Human identifcation name
+SOGoUserSource_type=Type
+SOGoUserSource_canAuthenticate=Enable authentification
+SOGoUserSource_isAddressBook=Use this source as a shared addressbook
+
+SOGoUserSource_canAuthenticate?=Can Authenticate?
+SOGoUserSource_isAddressBook?=Is AddressBook?
+SOGoUserSource_delete=Delete Selected
+
+edit_source=Edit Source
+
+SOGoUserSource_ldap=LDAP Source Definition
+ldap_hostname=Hostnames (one per line)
+ldap_port=Port
+ldap_encryption=Encryption
+ldap_CNFieldName=Field name that returns the complete name
+ldap_IDFieldName=Field name that starts a user DN (not used if doing indirect binds, see bellow)
+ldap_UIDFieldName=Field name that returns the login name
+ldap_MailFieldNames=Fields that return the user's email addresses (one per line)
+ldap_IMAPHostFieldName=Field that returns the IMAP hostname for the user (optional)
+ldap_baseDN=Base DN of your user entries
+ldap_filter=Search filter (optional)
+ldap_scope=Search scope
+ldap_bindDN=DN of the login name to user for binding to your server
+ldap_bindPassword=Password for binding to your server
+ldap_bindFields=Fields to use when doing indirect binds
+SOGoLDAPContactInfoAttribute=Extra LDAP attribute that should appear in contact autocompletion
+SOGoLDAPQueryLimit=Maximum number of returned results
+SOGoLDAPQueryTimeout=Timeout of LDAP queries (in seconds)
+ldap_passwordPolicy=Use the extended LDAP Password Policies attributes (Warning: If you LDAP server does not support those and you activate this feature, every LDAP requests will fail)
+
+SOGoUserSource_sql=SQL Source Definition
+sql_viewURL=Database URL of the SQL view
+sql_userPasswordAlgorithm=Algorithm used for password encryption
+sql_MailFieldNames=Column names that return the user's email addresses (one per line)
+
+database_title=Database
+SOGoProfileURL=URL of table for users profiles
+OCSFolderInfoURL=URL of table for folders information
+OCSEMailAlarmsFolderURL=URL of table for email alarms
+OCSSessionsFolderURL=URL of table for Web sessions
+database_format=Must be formatted as <b>driver://username:password@hostname/database/table</b>,<br/>where driver can be <b>postgresql</b>, <b>mysql</b>, or <b>oracle</b>
+
+smtp_title=SMTP Server
+SOGoMailingMechanism=Mailing Mechanism
+
+imap_title=IMAP Server
+SOGoIMAPServer=IMAP server hostname
+SOGoSieveScriptsEnabled=Allow users to configure mail filters (requires Sieve)
+SOGoForwardEnabled=Enable forward (requires Sieve)
+SOGoVacationEnabled=Enable vacation auto-reply (requires Sieve)
+SOGoMailAuxiliaryUserAccountsEnabled=Allow users to add external IMAP accounts
+
+debug_title=Debugging
+SOGoUIxDebugEnabled=JavaScript debugging console
+PGDebugEnabled=Log PostgreSQL queries
+
+Tester=Connection Tester
+Database Access=Database Access
+SMTP Access=SMTP Access
+LDAP Access=LDAP Access
+IMAP Access=IMAP Access

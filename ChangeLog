@@ -1,0 +1,9 @@
+2011-02-16  Francis Lachapelle  <flachapelle@inverse.ca>
+
+	* sogo/database.cgi: added the parameter OCSSessionsFolderURL.
+
+	* sogo/edit_source.cgi: added the parameter MailFieldNames in SQL sources.
+
+	* sogo/sogo-lib.pl (string2array): fixed parsing when array is not
+	surrounded by quotes.
+
