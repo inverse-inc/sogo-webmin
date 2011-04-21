@@ -11,7 +11,7 @@ use WebminCore;
 sub defaults_read
 {
   my $param = shift;
-  my $cmd = "defaults -u " . $config{'sogo_user'} . " read " . $config{'gnustep_domain'} . " " . $param;
+  my $cmd = $config{'gnustep_defaults_command'} . " -u " . $config{'sogo_user'} . " read " . $config{'gnustep_domain'} . " " . $param;
   #warn ('[defaults_read] ' . $cmd);
   my $out = &backquote_logged("$cmd 2>&1 </dev/null", 1);
   my $ex = $?;
@@ -74,7 +74,7 @@ sub defaults_write
   my $operation = length($value)?"write":"delete";
 
   my $domain = $config{'gnustep_domain'};
-  my $cmd = "defaults -u " . $config{'sogo_user'} . " $operation $domain $param $value";
+  my $cmd = $config{'gnustep_defaults_command'} . " -u " . $config{'sogo_user'} . " $operation $domain $param $value";
   #warn "$cmd";
   my $out = &backquote_logged("$cmd 2>&1 </dev/null", 1);
   my $ex = $?;
@@ -93,7 +93,7 @@ sub defaults_write
     }
     push(@params, $buf) if ($buf);
     foreach $param (@params) {
-      $cmd = "defaults -u " . $config{'sogo_user'} . " write " . $param;
+      $cmd = $config{'gnustep_defaults_command'} . " -u " . $config{'sogo_user'} . " write " . $param;
       &backquote_logged("$cmd 2>&1 </dev/null", 1);
     }
     warn ('[defaults_write] Backup restored.');
