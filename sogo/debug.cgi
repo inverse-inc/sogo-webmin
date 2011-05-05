@@ -31,6 +31,11 @@ print &ui_table_row($text{'PGDebugEnabled'},
 				 "YES",
 				 undef,
 				 &defaults_read_bool("PGDebugEnabled")));
+print &ui_table_row($text{'LDAPDebugEnabled'},
+		    &ui_checkbox("LDAPDebugEnabled",
+				 "YES",
+				 undef,
+				 &defaults_read_bool("LDAPDebugEnabled")));
 print &ui_hidden_table_end("debug");
 
 print &ui_form_end([ [ undef, $text{'save'}, $text{'note_restart'} ] ]);

@@ -29,6 +29,9 @@ if ($s{type} eq 'ldap') {
   $s{UIDFieldName}                 = $in{ldap_UIDFieldName};
   $s{MailFieldNames}               = '(' . join(", ", split(/\r?\n/, $in{ldap_MailFieldNames})) . ')' if ($in{ldap_MailFieldNames}); 
   $s{IMAPHostFieldName}            = $in{ldap_IMAPHostFieldName};
+  $s{IMAPLoginFieldName}           = $in{ldap_IMAPLoginFieldName};
+  $s{KindFieldName}                = $in{ldap_KindFieldName};
+  $s{MultipleBookingsFieldName}    = $in{ldap_MultipleBookingsFieldName};
   $s{baseDN}                       = $in{ldap_baseDN};
   $s{filter}                       = $in{ldap_filter};
   $s{scope}                        = $in{ldap_scope};
@@ -44,6 +47,9 @@ elsif ($s{type} eq 'sql') {
   $s{viewURL}                      = $in{sql_viewURL};
   $s{userPasswordAlgorithm}        = $in{sql_userPasswordAlgorithm};
   $s{MailFieldNames}               = '(' . join(", ", split(/\r?\n/, $in{sql_MailFieldNames})) . ')' if ($in{sql_MailFieldNames});
+  $s{IMAPLoginFieldName}           = $in{sql_IMAPLoginFieldName};
+  $s{KindFieldName}                = $in{sql_KindFieldName};
+  $s{MultipleBookingsFieldName}    = $in{sql_MultipleBookingsFieldName};
 }
 
 if ($in{id}) {

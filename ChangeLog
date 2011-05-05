@@ -1,3 +1,15 @@
+2011-05-04  Francis Lachapelle  <flachapelle@inverse.ca>
+
+	* sogo/edit_source.cgi, sogo/save_source.cgi: added the parameters
+	IMAPLoginFieldName, KindFieldName, and MultipleBookingsFieldName.
+
+	* sogo/imap.cgi, sogo/save_imap.cgi, sogo/test_imap.cgi,
+	sogo/test_sieve.cgi: added the parameter SOGoSieveServer.
+
+	* sogo/general.cgi: updated languages.
+
+	* sogo/debug.cgi, sogo/save_debug.cgi: added the paramter LDAPDebugEnabled.
+
 2011-02-16  Francis Lachapelle  <flachapelle@inverse.ca>
 
 	* sogo/database.cgi: added the parameter OCSSessionsFolderURL.

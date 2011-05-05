@@ -18,6 +18,15 @@ if (!-x $config{'gnustep_defaults_command'}) {
 }
 
 print <<EOS
+<style type="text/css">
+TD SPAN {
+ font-size: smaller;
+}
+</style>
+EOS
+;
+
+print <<EOS
 <script lang="javascript">
 function popup_test(alink, object) {
   if (object.value) {
@@ -39,7 +48,14 @@ print &ui_table_row($text{'SOGoIMAPServer'},
 		    &ui_textbox("SOGoIMAPServer",
 				&defaults_read("SOGoIMAPServer") || 'localhost',
 				30) .
-		   "&nbsp;<a href='test_imap.cgi' onClick='return popup_test(this, document.imap.SOGoIMAPServer);'>$text{'test'}</a>");
+		   "&nbsp;<a href='test_imap.cgi' onClick='return popup_test(this, document.imap.SOGoIMAPServer);'>$text{'test'}</a>" .
+                   '<br/><span>' . $text{SOGoIMAPServer_note} . '</span>');
+print &ui_table_row($text{'SOGoSieveServer'},
+		    &ui_textbox("SOGoSieveServer",
+				&defaults_read("SOGoSieveServer") || 'sieve://localhost',
+				30) .
+		   "&nbsp;<a href='test_sieve.cgi' onClick='return popup_test(this, document.imap.SOGoSieveServer);'>$text{'test'}</a>" .
+                   '<br/><span>' . $text{SOGoSieveServer_note} . '</span>');
 print &ui_table_row($text{'SOGoSieveScriptsEnabled'},
 		    &ui_checkbox("SOGoSieveScriptsEnabled",
 				 "YES",

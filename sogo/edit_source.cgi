@@ -155,6 +155,18 @@ print &ui_table_row($text{'ldap_IMAPHostFieldName'},
 		    &ui_textbox("ldap_IMAPHostFieldName",
 				$s->{IMAPHostFieldName},
 				20));
+print &ui_table_row($text{'ldap_IMAPLoginFieldName'},
+		    &ui_textbox("ldap_IMAPLoginFieldName",
+				$s->{IMAPLoginFieldName},
+				20));
+print &ui_table_row($text{'ldap_KindFieldName'},
+		    &ui_textbox("ldap_KindFieldName",
+				$s->{KindFieldName},
+				20) . '<br/><span>' . $text{KindFieldName_note} . '</span>');
+print &ui_table_row($text{'ldap_MultipleBookingsFieldName'},
+		    &ui_textbox("ldap_MultipleBookingsFieldName",
+				$s->{MultipleBookingsFieldName},
+				20));
 print &ui_table_row($text{'ldap_baseDN'},
 		    &ui_textbox("ldap_baseDN",
 				$s->{baseDN},
@@ -226,6 +238,18 @@ print &ui_table_row($text{'sql_MailFieldNames'},
 				 3,
 				 40,
 				 "off"));
+print &ui_table_row($text{'sql_IMAPLoginFieldName'},
+		    &ui_textbox("sql_IMAPLoginFieldName",
+				$s->{IMAPLoginFieldName},
+				20));
+print &ui_table_row($text{'sql_KindFieldName'},
+		    &ui_textbox("sql_KindFieldName",
+				$s->{KindFieldName},
+				20) . '<br/><span>' . $text{KindFieldName_note} . '</span>');
+print &ui_table_row($text{'sql_MultipleBookingsFieldName'},
+		    &ui_textbox("sql_MultipleBookingsFieldName",
+				$s->{MultipleBookingsFieldName},
+				20));
 print &ui_table_end();
 
 print &ui_form_end([ [ undef, $text{'save'}, $text{'note_restart'} ] ]);
