@@ -1,3 +1,10 @@
+2011-11-03  Francis Lachapelle  <flachapelle@inverse.ca>
+
+	* sogo/sogo-lib.pl (defaults_write, defaults_read): Instead of
+	calling "defaults -u sogo", we now call "su - sogo -c
+	defaults". This fixes a regression with the command-line tool
+	defaults in gnustep-base 1.22.
+
 2011-05-04  Francis Lachapelle  <flachapelle@inverse.ca>
 
 	* sogo/edit_source.cgi, sogo/save_source.cgi: added the parameters

@@ -11,7 +11,7 @@ use WebminCore;
 sub defaults_read
 {
   my $param = shift;
-  my $cmd = $config{'gnustep_defaults_command'} . " -u " . $config{'sogo_user'} . " read " . $config{'gnustep_domain'} . " " . $param;
+  my $cmd = 'su - ' . $config{'sogo_user'} . ' -c "' .$config{'gnustep_defaults_command'} . " read " . $config{'gnustep_domain'} . " " . $param . '"';
   #warn ('[defaults_read] ' . $cmd);
   my $out = &backquote_logged("$cmd 2>&1 </dev/null", 1);
   my $ex = $?;
@@ -68,13 +68,13 @@ sub defaults_read_array
 sub defaults_write
 {
   my $param = shift;
-  my $value = shift;
+  my $value = shift; $value =~ s/"/\\"/g;
 
   my $backup = &defaults_read("");
   my $operation = length($value)?"write":"delete";
 
   my $domain = $config{'gnustep_domain'};
-  my $cmd = $config{'gnustep_defaults_command'} . " -u " . $config{'sogo_user'} . " $operation $domain $param $value";
+  my $cmd = 'su - ' . $config{'sogo_user'} . ' -c "' . $config{'gnustep_defaults_command'} . " $operation $domain $param $value\"";
   #warn "$cmd";
   my $out = &backquote_logged("$cmd 2>&1 </dev/null", 1);
   my $ex = $?;
